@@ -1,0 +1,121 @@
+:root {
+  --bg: #0c1624;
+  --card: #132238;
+  --text: #eef6ff;
+  --muted: #94a8c4;
+  --green: #34d399;
+  --blue: #60a5fa;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Work Sans", sans-serif;
+  background: linear-gradient(135deg, #0c1624 0%, #0a2820 100%);
+  color: var(--text);
+}
+
+header {
+  padding: 2rem 1.5rem 1rem;
+  text-align: center;
+}
+
+h1 {
+  font-family: "Literata", serif;
+  margin: 0;
+  font-size: 2.5rem;
+  background: linear-gradient(120deg, var(--blue), var(--green));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer 6s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0%, 100% { filter: hue-rotate(0deg); }
+  50% { filter: hue-rotate(15deg); }
+}
+
+.sub { color: var(--muted); margin: 0.5rem 0 0; font-size: 0.95rem; }
+
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0 1rem;
+}
+
+.tabs button {
+  font-family: inherit;
+  border: 1px solid #2a4060;
+  background: var(--card);
+  color: var(--text);
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: transform 0.15s, background 0.15s;
+}
+
+.tabs button.active {
+  background: linear-gradient(135deg, #2563eb, #059669);
+  border-color: transparent;
+}
+
+.tabs button:hover { transform: translateY(-2px); }
+
+.converter {
+  max-width: 520px;
+  margin: 1.5rem auto 3rem;
+  padding: 1.5rem;
+  background: rgba(19, 34, 56, 0.9);
+  border: 1px solid #2a4060;
+  border-radius: 20px;
+  animation: rise 0.45s ease-out;
+}
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: none; }
+}
+
+.field { margin-bottom: 1rem; }
+.field label { display: block; font-size: 0.85rem; color: var(--muted); margin-bottom: 0.35rem; }
+
+.field-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.5rem;
+}
+
+input, select {
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 0.55rem 0.65rem;
+  border-radius: 10px;
+  border: 1px solid #2a4060;
+  background: #0c1624;
+  color: var(--text);
+  width: 100%;
+}
+
+.result {
+  margin-top: 1.25rem;
+  padding: 1rem;
+  border-radius: 12px;
+  background: rgba(52, 211, 153, 0.1);
+  border: 1px solid rgba(52, 211, 153, 0.35);
+  font-family: "Literata", serif;
+  font-size: 1.35rem;
+}
+
+.fx-note { font-size: 0.8rem; color: var(--muted); margin-top: 0.75rem; }
+
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
